@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Devis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>MAISON CARRELAGE</h1>
+        <p>CARRELAGE - ROBINETTERIE - SALLE DE BAIN - MARBRE</p>
+        <h3>99 Angle El Farabi & Rue Taza Tassila, Agadir</h3>
+    </header>
+
+    <main>
+        <section id="devis-section">
+            <h2>Créer un Devis</h2>
+            <form id="devis-form">
+                <div class="form-group">
+                    <label for="devis-number">Devis N°</label>
+                    <input type="text" id="devis-number" name="devis-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-name">Client</label>
+                    <input type="text" id="client-name" name="client-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <!-- Articles -->
+                <div id="articles-container">
+                    <!-- Articles will be dynamically added here -->
+                </div>
+                <button type="button" id="add-article" class="btn btn-primary">Ajouter un article</button>
+                <div class="form-group">
+                    <label for="total">TOTAL</label>
+                    <input type="text" id="total" name="total" readonly>
+                </div>
+                <button type="submit" class="btn btn-success">Enregistrer le Devis</button>
+            </form>
+        </section>
+
+        <section id="clients-section">
+            <h2>Clients et Devis</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Devis N°</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="clients-table-body">
+                    <!-- Client Devis will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="print-section" style="display:none;">
+            <div id="print-content">
+                <!-- Devis details will be displayed here for printing -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
